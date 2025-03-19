@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Colombiana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .question-container {
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 50%;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="question-container">
+        <h2 id="question">Pregunta aquí</h2>
+        <div id="options"></div>
+        <button id="checkBtn" onclick="checkAnswer()">Confirmar</button>
+        <button id="nextBtn" onclick="nextQuestion()" disabled>Avanzar</button>
+    </div>
+
+    <script>
+        const questions = [
+            { question: "¿Cuál es la capital de Colombia?", options: ["Medellín", "Cali", "Bogotá", "Barranquilla"], correct: 2 },
+            { question: "¿En qué año se firmó la independencia de Colombia?", options: ["1810", "1820", "1830", "1840"], correct: 0 },
+            { question: "¿Cuál es el río más largo de Colombia?", options: ["Río Magdalena", "Río Cauca", "Río Amazonas", "Río Orinoco"], correct: 2 }
+        ];
+
+        let currentQuestion = 0;
+        let selectedAnswer = null;
+
+        function loadQuestion() {
+            const q = questions[currentQuestion];
+            document.getElementById("question").textContent = q.question;
+            const optionsDiv = document.getElementById("options");
+            optionsDiv.innerHTML = "";
+            q.options.forEach((option, index) => {
+                const btn = document.createElement("button");
+                btn.textContent = option;
+                btn.onclick = () => selectAnswer(index);
+                optionsDiv.appendChild(btn);
+            });
+            document.getElementById("nextBtn").disabled = true;
+        }
+
+        function selectAnswer(index) {
+            selectedAnswer = index;
+        }
+
+        function checkAnswer() {
+            if (selectedAnswer === questions[currentQuestion].correct) {
+                document.getElementById("nextBtn").disabled = false;
+                alert("¡Respuesta correcta!");
+            } else {
+                alert("Respuesta incorrecta, intenta de nuevo.");
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                loadQuestion();
+            } else {
+                alert("¡Felicidades! Has completado la trivia.");
+            }
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>
