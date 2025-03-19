@@ -55,6 +55,10 @@ button {
 }
 
 @media (max-width: 720px) {
+    #logo img{
+        width: 150px;
+        height: 150px;
+    }
     .question-container {
         display: flex;
         justify-content: center;
