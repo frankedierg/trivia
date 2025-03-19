@@ -6,6 +6,10 @@ body {
     text-align: center;
     margin: 20px;
 }
+#logo img{
+    width: 150px;
+    height: 150px;
+}
 .question-container {
     color: #1e8449;
     margin: 20px auto;
