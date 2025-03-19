@@ -1,7 +1,7 @@
 const questions = [
     { question: "¿Cuál es la capital de Colombia?", options: ["Medellín", "Cali", "Bogotá", "Barranquilla"], correct: 2 },
     { question: "¿En qué año se firmó la independencia de Colombia?", options: ["1810", "1820", "1830", "1840"], correct: 0 },
-    { question: "¿Cuál es el río más largo de Colombia?", options: ["Río Magdalena", "Río Cauca", "Río Amazonas", "Río Orinoco"], correct: 2 },
+    { question: "¿Cuál es el río más largo de Colombia?", options: ["Río Magdalena", "Río Cauca", "Río Amazonas", "Río Putumayo"], correct: 3 },
     { question: "¿Cuál es el ave nacional de Colombia?", options: ["Cóndor de los Andes", "Águila arpía", "Guacamaya", "Colibrí"], correct: 0 },
     { question: "¿Quién escribió 'Cien años de soledad'?", options: ["Pablo Neruda", "Gabriel García Márquez", "Jorge Isaacs", "Mario Vargas Llosa"], correct: 1 },
     { question: "¿En qué año se dió la batalla del Pantano de Vargas?", options: ["1810", "1819", "1830", "1845"], correct: 0 },
